@@ -80,6 +80,28 @@ void monotone_hull(vector<point> &pts) {
     #endif
 }
 
+// Only to find the convex hull presentation of a polygon
+// failed if polygon isn't convex
+vector<point> ConvexHull(vector<point> a) {
+    if(int(a.size()) == 1) return a;
+    sort(a.begin(), a.end());
+    
+    vector<point> up(int(a.size())), down(int(a.size()));
+    up[0]=down[0]=a[0]; 
+    
+    int m=0, n=0;
+    for(int i = 1; i < int(a.size()); i++) {
+        while(m && ccw(up[m - 1], up[m], a[i]) >= 0) m--;
+        while(n && 0 > =ccw(down[n - 1], down[n], a[i])) n--;
+        up[++m] = down[++n] = a[i]; 
+    }
+    
+    for(int i = 0; i <= m; i++) a[i]=up[i];
+    for(int i = n - 1; i >= 1; i--) a[m + n - i] = down[i];
+    a.resize(m + n);
+    return a;
+}
+
 //avoid using long double for comparisons, change type and remove division by 2
 ld compute_signed_area(const vector<point> &p) {
     ld area = 0;
