@@ -45,9 +45,9 @@ math/primitive-root.cpp	Primitive Root
 math/gauss-elim.cpp	Gaussian Elimination (double)
 math/gauss-elim-prime.cpp	Gaussian Elimination (modulo prime)
 math/gauss-elim-ext.cpp	Gaussian Elimination (extended inverse)
-math/gss.cpp	Golden Section Search (Ternary Search)
+# math/gss.cpp	Golden Section Search (Ternary Search)
 # math/josephus.cpp	Josephus
-math/simpson-rule.cpp	Simpson Rule
+# math/simpson-rule.cpp	Simpson Rule
 math/discrete-log.cpp	Discrete Log (Baby-step Giant-step)
 math/mobius.cpp	Mobius Function
 # math/stanford-simplex.cpp	Simplex (Stanford)
